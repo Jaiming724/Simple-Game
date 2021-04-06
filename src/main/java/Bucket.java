@@ -1,10 +1,8 @@
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -19,10 +17,8 @@ public class Bucket extends Actor {
     public Bucket() {
         bucket = new Sprite(new Texture("bucket.png"));
         bucketBoundingBox = new Rectangle((int) bucket.getX(), (int) bucket.getY(), (int) bucket.getWidth(), (int) bucket.getHeight());
-
         setBounds(bucket.getX(), bucket.getY(), bucket.getWidth(), bucket.getHeight());
         addListener(new InputListener() {
-
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
                 if (keycode == Input.Keys.RIGHT) {
@@ -45,7 +41,6 @@ public class Bucket extends Actor {
                 return true;
             }
         });
-
 
     }
 
