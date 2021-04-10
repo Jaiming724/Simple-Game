@@ -50,17 +50,24 @@ public class Bucket extends Actor {
             bucket.translateX(-3);
         if (rightToggle)
             bucket.translateX(3);
-    }
-
-    @Override
-    public void draw(Batch batch, float parentAlpha) {
         if (bucket.getX() < 0) {
             bucket.setPosition(Gdx.graphics.getWidth(), bucket.getY());
         } else if (bucket.getX() > Gdx.graphics.getWidth()) {
             bucket.setPosition(0, bucket.getY());
         }
         bucketBoundingBox.set(bucket.getX(), bucket.getY(), bucket.getWidth(), bucket.getHeight());
-        batch.draw(bucket, bucket.getX(), bucket.getY());
+    }
+
+    @Override
+    public void draw(Batch batch, float parentAlpha) {
+
+          batch.draw(bucket, bucket.getX(), bucket.getY());
+    }
+
+    @Override
+    protected void positionChanged() {
+        bucket.setPosition(getX(),getY());
+        super.positionChanged();
 
     }
 
