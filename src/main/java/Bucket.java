@@ -61,12 +61,12 @@ public class Bucket extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
 
-          batch.draw(bucket, bucket.getX(), bucket.getY());
+        batch.draw(bucket, bucket.getX(), bucket.getY());
     }
 
     @Override
     protected void positionChanged() {
-        bucket.setPosition(getX(),getY());
+        bucket.setPosition(getX(), getY());
         super.positionChanged();
 
     }
